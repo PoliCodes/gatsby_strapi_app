@@ -1,0 +1,38 @@
+{
+  "connection": "default",
+  "collectionName": "articles",
+  "info": {
+    "name": "articles",
+    "description": "General articles"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "title": {
+      "maxLength": 100,
+      "required": true,
+      "default": "",
+      "minLength": 3,
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "user": {
+      "model": "user",
+      "via": "articles",
+      "plugin": "users-permissions"
+    }
+  }
+}
