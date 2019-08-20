@@ -5,10 +5,14 @@ import Layout from '../components/layout'
 
 const ArticleTemplate = ({ data }) => (
     <Layout>
+        <div className="indexArticle">
         <h1>{data.strapiArticle.title}</h1>
         <p>by <Link to={`/user/User_${data.strapiArticle.user.id}`}>{data.strapiArticle.user.username}</Link></p>
         <Img fluid={data.strapiArticle.image.childImageSharp.fluid}></Img>
         <p>{data.strapiArticle.content}</p>
+            
+        </div>
+        
     </Layout>
 )
 
